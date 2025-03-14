@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<TITLE>Cumple de paocita.</TITLE>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un cumpleaños especial para Pao</title>
+    <style>
+        body {
+            background: #f9f3f0;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: #4a4a4a;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-family: 'Georgia', serif;
+            color: #8e44ad;
+            margin-top: 100px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+
+        .scroll-container {
+            position: relative;
+            background: #fff;
+            width: 60%;
+            height: 80%;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .scroll-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: scroll 30s linear infinite;
+        }
+
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+
+        .letter {
+            background: #fff;
+            padding: 30px;
+            position: relative;
+            overflow: auto;
+            height: 100%;
+            width: 100%;
+            animation: letterScroll 10s ease-out forwards;
+            border-radius: 20px;
+            max-height: 500px;
+        }
+
+        @keyframes letterScroll {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(0); }
+        }
+
+        .letter-content {
+            font-size: 22px;
+            line-height: 1.6;
+            color: #6f42c1;
+            font-family: 'Georgia', serif;
+            text-align: left;
+            margin-bottom: 20px;
+            animation: fadeInLetter 2s ease-in-out;
+        }
+
+        @keyframes fadeInLetter {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .btn-surprise {
+            background-color: #8e44ad;
+            border: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: 0.3s ease;
+        }
+
+        .btn-surprise:hover {
+            background-color: #9b59b6;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            animation: sparkle 1.5s infinite;
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .star {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            width: 2px;
+            height: 2px;
+            opacity: 0.7;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        audio {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Feliz Cumpleaños, Pao</h1>
+
+    <div class="main-container">
+        <div class="scroll-container">
+            <img src="jung.jpg" alt="Background Image">
+            
+            <div class="letter">
+                <div class="letter-content">
+                    <p>Querida Pao,</p>
+                    <p>No sé qué hice para merecer una amiga tan genial como tú, pero lo agradezco cada día. Eres un sol, una joya, y me alegra un montón compartir risas, secretos y raros momentos contigo. Me siento increíblemente afortunada de ser tu amiga.Tu bondad, tu sonrisa y tu capacidad de hacer que los días sean más brillantes son solo algunas de las razones por las que te quiero tanto.</p>
+                    <p>Que todos tus sueños se hagan realidad, y que nunca falte la felicidad en tu vida. 💜</p>
+                    <p>Con todo mi cariño, Avril</p>
+                </div>
+                
+                <button class="btn-surprise" onclick="showSurprise()">¡Haz clic para una sorpresa!</button>
+                
+                <div id="surprise" style="display:none;">
+                    <p>¡SORPRESA! 🎉</p>
+                    <p>Te mando un abrazo gigante y un millón de buenos deseos en tu día. ¡Siempre contarás conmigo! 🌟</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stars">
+        <div class="star" style="top: 20%; left: 30%; animation-duration: 4s;"></div>
+        <div class="star" style="top: 50%; left: 70%; animation-duration: 5s;"></div>
+        <div class="star" style="top: 80%; left: 40%; animation-duration: 6s;"></div>
+        <div class="star" style="top: 30%; left: 90%; animation-duration: 3s;"></div>
+        <div class="star" style="top: 10%; left: 10%; animation-duration: 7s;"></div>
+    </div>
+
+    <audio autoplay loop>
+        <source src="https://www.mboxdrive.com/stillwithyou.mp3" type="audio/mp3">
+        Tu navegador no soporta el audio.
+    </audio>
+
+    <script>
+        function showSurprise() {
+            document.getElementById("surprise").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
